@@ -7,11 +7,30 @@
 
 import SwiftUI
 
+/// Home View of the App
+///
+
 struct HomeView: View {
+    
+    // MARK: PROPERTIES
+    
+    @State var searchText = ""
+    
+    // MARK: BODY
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            
+            VStack {
+                SearchBarView(searchText: $searchText)
+                
+            }
+        }
     }
 }
+
+// MARK: PREVIEW
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

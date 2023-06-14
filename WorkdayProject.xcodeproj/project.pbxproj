@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB5CC1652A39947200B99EA6 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5CC1642A39947200B99EA6 /* UIApplication.swift */; };
+		AB5CC1672A3994E000B99EA6 /* BackgroundShadowBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5CC1662A3994E000B99EA6 /* BackgroundShadowBox.swift */; };
 		AB8ABD0E2A3988E80063FCD1 /* WorkdayProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD0D2A3988E80063FCD1 /* WorkdayProjectApp.swift */; };
 		AB8ABD122A3988EA0063FCD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABD112A3988EA0063FCD1 /* Assets.xcassets */; };
 		AB8ABD152A3988EA0063FCD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABD142A3988EA0063FCD1 /* Preview Assets.xcassets */; };
@@ -14,6 +16,8 @@
 		AB8ABD292A3988EA0063FCD1 /* WorkdayProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD282A3988EA0063FCD1 /* WorkdayProjectUITests.swift */; };
 		AB8ABD2B2A3988EA0063FCD1 /* WorkdayProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD2A2A3988EA0063FCD1 /* WorkdayProjectUITestsLaunchTests.swift */; };
 		AB8ABD3F2A3989E90063FCD1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD3E2A3989E90063FCD1 /* HomeView.swift */; };
+		AB8ABD782A398DBD0063FCD1 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD772A398DBD0063FCD1 /* SearchBarView.swift */; };
+		AB8ABD7A2A39909E0063FCD1 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD792A39909E0063FCD1 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB5CC1642A39947200B99EA6 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		AB5CC1662A3994E000B99EA6 /* BackgroundShadowBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundShadowBox.swift; sourceTree = "<group>"; };
 		AB8ABD0A2A3988E80063FCD1 /* WorkdayProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkdayProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8ABD0D2A3988E80063FCD1 /* WorkdayProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayProjectApp.swift; sourceTree = "<group>"; };
 		AB8ABD112A3988EA0063FCD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +50,8 @@
 		AB8ABD282A3988EA0063FCD1 /* WorkdayProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayProjectUITests.swift; sourceTree = "<group>"; };
 		AB8ABD2A2A3988EA0063FCD1 /* WorkdayProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AB8ABD3E2A3989E90063FCD1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AB8ABD772A398DBD0063FCD1 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		AB8ABD792A39909E0063FCD1 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +158,8 @@
 		AB8ABD392A3989120063FCD1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AB8ABD792A39909E0063FCD1 /* ColorExtension.swift */,
+				AB5CC1642A39947200B99EA6 /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +181,8 @@
 		AB8ABD3C2A3989C90063FCD1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AB8ABD772A398DBD0063FCD1 /* SearchBarView.swift */,
+				AB5CC1662A3994E000B99EA6 /* BackgroundShadowBox.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -314,7 +326,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8ABD3F2A3989E90063FCD1 /* HomeView.swift in Sources */,
+				AB8ABD782A398DBD0063FCD1 /* SearchBarView.swift in Sources */,
 				AB8ABD0E2A3988E80063FCD1 /* WorkdayProjectApp.swift in Sources */,
+				AB5CC1652A39947200B99EA6 /* UIApplication.swift in Sources */,
+				AB8ABD7A2A39909E0063FCD1 /* ColorExtension.swift in Sources */,
+				AB5CC1672A3994E000B99EA6 /* BackgroundShadowBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
