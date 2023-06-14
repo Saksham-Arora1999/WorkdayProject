@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AB8ABD0E2A3988E80063FCD1 /* WorkdayProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD0D2A3988E80063FCD1 /* WorkdayProjectApp.swift */; };
-		AB8ABD102A3988E80063FCD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD0F2A3988E80063FCD1 /* ContentView.swift */; };
 		AB8ABD122A3988EA0063FCD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABD112A3988EA0063FCD1 /* Assets.xcassets */; };
 		AB8ABD152A3988EA0063FCD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABD142A3988EA0063FCD1 /* Preview Assets.xcassets */; };
 		AB8ABD1F2A3988EA0063FCD1 /* WorkdayProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD1E2A3988EA0063FCD1 /* WorkdayProjectTests.swift */; };
 		AB8ABD292A3988EA0063FCD1 /* WorkdayProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD282A3988EA0063FCD1 /* WorkdayProjectUITests.swift */; };
 		AB8ABD2B2A3988EA0063FCD1 /* WorkdayProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD2A2A3988EA0063FCD1 /* WorkdayProjectUITestsLaunchTests.swift */; };
+		AB8ABD3F2A3989E90063FCD1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABD3E2A3989E90063FCD1 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		AB8ABD0A2A3988E80063FCD1 /* WorkdayProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkdayProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8ABD0D2A3988E80063FCD1 /* WorkdayProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayProjectApp.swift; sourceTree = "<group>"; };
-		AB8ABD0F2A3988E80063FCD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB8ABD112A3988EA0063FCD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8ABD142A3988EA0063FCD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB8ABD1A2A3988EA0063FCD1 /* WorkdayProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkdayProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,7 @@
 		AB8ABD242A3988EA0063FCD1 /* WorkdayProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkdayProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8ABD282A3988EA0063FCD1 /* WorkdayProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayProjectUITests.swift; sourceTree = "<group>"; };
 		AB8ABD2A2A3988EA0063FCD1 /* WorkdayProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AB8ABD3E2A3989E90063FCD1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,12 @@
 		AB8ABD0C2A3988E80063FCD1 /* WorkdayProject */ = {
 			isa = PBXGroup;
 			children = (
+				AB8ABD392A3989120063FCD1 /* Extensions */,
+				AB8ABD3A2A39891B0063FCD1 /* Utilities */,
+				AB8ABD3B2A3989220063FCD1 /* Services */,
+				AB8ABD382A39890B0063FCD1 /* Models */,
+				AB8ABD372A3988FE0063FCD1 /* Core */,
 				AB8ABD0D2A3988E80063FCD1 /* WorkdayProjectApp.swift */,
-				AB8ABD0F2A3988E80063FCD1 /* ContentView.swift */,
 				AB8ABD112A3988EA0063FCD1 /* Assets.xcassets */,
 				AB8ABD132A3988EA0063FCD1 /* Preview Content */,
 			);
@@ -125,6 +129,58 @@
 				AB8ABD2A2A3988EA0063FCD1 /* WorkdayProjectUITestsLaunchTests.swift */,
 			);
 			path = WorkdayProjectUITests;
+			sourceTree = "<group>";
+		};
+		AB8ABD372A3988FE0063FCD1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AB8ABD3C2A3989C90063FCD1 /* Components */,
+				AB8ABD3D2A3989D90063FCD1 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AB8ABD382A39890B0063FCD1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB8ABD392A3989120063FCD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AB8ABD3A2A39891B0063FCD1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AB8ABD3B2A3989220063FCD1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AB8ABD3C2A3989C90063FCD1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AB8ABD3D2A3989D90063FCD1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB8ABD3E2A3989E90063FCD1 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB8ABD102A3988E80063FCD1 /* ContentView.swift in Sources */,
+				AB8ABD3F2A3989E90063FCD1 /* HomeView.swift in Sources */,
 				AB8ABD0E2A3988E80063FCD1 /* WorkdayProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +480,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,6 +509,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
