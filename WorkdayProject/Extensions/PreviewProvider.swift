@@ -22,12 +22,22 @@ class TestInstance {
     }
     //let hvm = HomeViewModel()
     
-    let testDescription = Detail(id: "NHQ201905310026",
-                                 description: "The Mars celebration Friday, May 31, 2019, in Mars, Pennsylvania",
+    let testDescription = Detail(description: "The Mars celebration Friday, May 31, 2019, in Mars,Pennsylvania",
                                  title: "Mars Celebration",
                                  photographer: "Mars Celebration",
                                  location: "Mars, PA, USA",
-                                 dateCreated: ISO8601DateFormatter().date(from: "2019-05-31T00:00:00Z")!)
+                                 nasaID: "NHQ201905310026",
+                                 dateCreated: "2019-05-31T00:00:00Z")
     
-    let testImage = ItemLink(imageLink: "https://images-assets.nasa.gov/image/NHQ201905310026/NHQ201905310026~thumb.jpg")
+    
+    let testImage = ItemLink(href: "https://images-assets.nasa.gov/image/NHQ201905310026/NHQ201905310026~thumb.jpg")
+    
+    let testData = NasaData(detail:
+                                Detail(description: "The Mars celebration Friday, May 31, 2019, in Mars,Pennsylvania",
+                                       title: "Mars Celebration",
+                                       photographer: "Mars Celebration",
+                                       location: "Mars, PA, USA",
+                                       nasaID: "NHQ201905310026",
+                                       dateCreated: "2019-05-31T00:00:00Z"),
+                            itemLink: ItemLink(href: "https://images-assets.nasa.gov/image/NHQ201905310026/NHQ201905310026~thumb.jpg"))
 }

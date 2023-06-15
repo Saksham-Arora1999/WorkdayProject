@@ -20,7 +20,6 @@ struct DetailRowView: View {
                 .background(.background)
             Text("\(field): \(value)")
                 .foregroundColor(Color.theme.green)
-                .font(.title3)
         }
         .padding(.bottom)
     }

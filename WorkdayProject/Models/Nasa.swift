@@ -16,7 +16,7 @@ struct APIResponse: Codable {
 
 // MARK: - Collection
 struct Collection: Codable {
-    let items: [Item]
+    var items: [Item]
     	
 }
 
@@ -29,27 +29,46 @@ struct Item: Codable {
 // MARK: - Detail
 
 /// Detail is a model which will contain all the details related to an image
-struct Detail: Codable, Identifiable {
-    let id: String
+struct Detail: Codable {
     let description, title: String
     let photographer: String?
     let location: String?
-    let dateCreated: Date
+    let nasaID: String
+    let dateCreated: String
+    
     
     enum CodingKeys: String, CodingKey {
-        case description, title, photographer, location, dateCreated
-        case id = "nasaId"
+        case description, title, photographer, location
+        case nasaID = "nasa_id"
+        case dateCreated = "date_created"
+        
     }
-
-    
 }
 
 // MARK: Item Link
 /// Model which only contains the link for the image
 struct ItemLink: Codable {
+    let href: String
+    
+}
+
+// MARK: Data
+struct NasaData: Identifiable {
+    let id: String
+    let description, title: String
+    let photographer: String?
+    let location: String?
+    let dateCreated: String
     let imageLink: String
     
-    enum CodingKeys: String, CodingKey {
-        case imageLink = "href"
+    init(detail: Detail, itemLink: ItemLink) {
+        self.id = detail.nasaID
+        self.description = detail.description
+        self.title = detail.title
+        self.photographer = detail.photographer
+        self.location = detail.location
+        self.dateCreated = detail.dateCreated
+        self.imageLink = itemLink.href
     }
+    
 }
