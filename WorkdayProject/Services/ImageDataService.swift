@@ -8,11 +8,13 @@
 import Foundation
 import SwiftUI
 
+//MARK: Protocol ImageDataLayer
 protocol ImageDataLayer {
     func getImage() async throws -> UIImage
     
 }
 
+/// ImageDataService is used to fetch images
 class ImageDataService: ImageDataLayer {
     
     let fileManager = LocalFileManager.instance
@@ -24,6 +26,11 @@ class ImageDataService: ImageDataLayer {
         self.data = data
     }
     
+    /// Function to get image
+    ///
+    /// First it checks if the image is already cached by the FileManager, and if not it downloads the image and stores it
+    ///
+    ///- Returns: UIImage
     func getImage() async throws -> UIImage {
         
         // Find saved image
@@ -37,6 +44,11 @@ class ImageDataService: ImageDataLayer {
         }
     }
     
+    /// Function to download the image
+    ///
+    /// If the image os not already downloaded this method is called
+    ///
+    /// - Returns: UIImage
     private func downloadImage() async throws -> UIImage{
         
         let returnedData = try await networkManager.fetch(url: data.imageLink)

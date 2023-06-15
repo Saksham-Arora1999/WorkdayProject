@@ -7,10 +7,14 @@
 
 import Foundation
 
+// MARK: NetworkLayer Protocol
+/// Protocol defined for the network layer
 protocol NetworkLayer{
     func fetch(url: String) async throws -> Data
 }
 
+// MARK: Network Manager
+/// Singleton class:  provides a reusable network layes
 class NetworkManager: NetworkLayer{
     
     
@@ -18,6 +22,7 @@ class NetworkManager: NetworkLayer{
     
     private init() {}
 
+    /// Contains the type of errors which might be thrown by the Network Layer
     enum NetworkingError: LocalizedError {
         case badServerRespone
         case connectionTimedOut
@@ -32,7 +37,10 @@ class NetworkManager: NetworkLayer{
         }
     }
     
-    
+    /// Responsible for making API Calls
+    ///
+    /// - Parameter url: String which contains the API url
+    /// - Returns: Data which need to be decoded by the caller
     func fetch(url: String) async throws -> Data {
         
         guard let url = URL(string: url)

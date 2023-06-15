@@ -8,13 +8,11 @@
 import SwiftUI
 
 /// Home View of the App
-///
 
 struct HomeView: View {
     
     // MARK: PROPERTIES
     
-    @State var searchText = ""
     @StateObject var vm = HomeViewModel()
     
     // MARK: BODY
@@ -24,17 +22,18 @@ struct HomeView: View {
         ZStack {
             Color.theme.green.ignoresSafeArea()
             VStack {
-                SearchBarView(searchText: $searchText)
+                SearchBarView(searchText: $vm.searchText)
                 //Spacer()
                 List{
                     
                     ForEach(vm.data) { item in
                         
-                        NavigationLink(destination: DetailView(data: item)) {
-                            ImageRowView(data: item)
-                        }
-                        
-                            
+                        NavigationLink(destination:LazyView { DetailView(data: item) }, label:  { ImageRowView(data: item) })
+                            .task {
+                                if item == vm.data.last {
+                                    await vm.loadMoreData()
+                                }
+                            }
                             
                     }
                     
@@ -42,7 +41,9 @@ struct HomeView: View {
                     .background(Color.theme.background)
             }
         }.task {
-            await vm.fetch()
+            if vm.data.isEmpty {
+                await vm.fetch()
+            }
         }
     }
 }

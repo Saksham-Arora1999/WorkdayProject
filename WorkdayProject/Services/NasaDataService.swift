@@ -84,15 +84,23 @@ import Foundation
  }
  */
 
+// MARK: NasaDataLayer
 protocol NasaDataLayer {
     func fetch(url: String) async throws -> [NasaData]
 }
 
 
+// MARK: NasaDataService
 class NasaDataService: NasaDataLayer {
     
     let networkManager: NetworkLayer = NetworkManager.instance
     
+    /// Responsible for decoding data into NasaData format
+    ///
+    /// Makes call to the network manager fetch function to grab data and returns the data in the decoded form to be used by application
+    ///
+    /// - Parameter url: String for the API call
+    /// - Returns: An array of NasaData or throws an error
     func fetch(url: String) async throws -> [NasaData] {
         
         let data = try await networkManager.fetch(url: url)

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// Image View Model: responsible for magaing data for images
 @MainActor
 class ImageViewModel: ObservableObject {
     
@@ -23,6 +24,7 @@ class ImageViewModel: ObservableObject {
         self.imageDataService = ImageDataService(data: data)
     }
     
+    /// Function which fetches image form ImageDataService
     func fetchImage() async {
         do {
             

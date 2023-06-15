@@ -52,8 +52,8 @@ struct ItemLink: Codable {
     
 }
 
-// MARK: Data
-struct NasaData: Identifiable {
+// MARK: NasaData
+struct NasaData: Identifiable, Equatable {
     let id: String
     let description, title: String
     let photographer: String?
@@ -69,6 +69,10 @@ struct NasaData: Identifiable {
         self.location = detail.location
         self.dateCreated = detail.dateCreated
         self.imageLink = itemLink.href
+    }
+    
+    static func == (lhs: NasaData, rhs: NasaData) -> Bool{
+        return lhs.id == rhs.id
     }
     
 }

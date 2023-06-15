@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// View of each row dispalyed when a someting is searched by the user
 struct ImageRowView: View {
     let data: NasaData
     

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// View for an image which is loaded in the description as well as in thelistView
 struct ImageView: View {
     
     

@@ -8,19 +8,18 @@
 import Foundation
 import SwiftUI
 
+//. Extending PreviewProvider to have test instances to use them while playing around with views
 extension PreviewProvider {
     static var test: TestInstance {
         return TestInstance.instance
     }
 }
 
+/// Singleton class which contains test instances
 class TestInstance {
     static let instance = TestInstance()
     
-    private init() {
-        
-    }
-    //let hvm = HomeViewModel()
+    private init() {}
     
     let testDescription = Detail(description: "The Mars celebration Friday, May 31, 2019, in Mars,Pennsylvania",
                                  title: "Mars Celebration",

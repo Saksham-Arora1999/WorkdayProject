@@ -33,7 +33,6 @@ struct DetailView: View {
             }
         }.padding()
             .navigationTitle(data.title)
-            //.navigationBarBackButtonHidden(false)
     }
     
     // MARK: Description

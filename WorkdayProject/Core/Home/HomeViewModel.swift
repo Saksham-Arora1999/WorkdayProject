@@ -6,27 +6,56 @@
 //
 
 import Foundation
+import AsyncAlgorithms
 
+
+/// Home View Model: Manages the data for Home View
 @MainActor
 class HomeViewModel: ObservableObject {
     
     @Published private(set) var data: [NasaData] = []
-    private var pageNumber: Int = 1
-    private var limit: Int
+    @Published var searchText: String = ""
+    private var pageNumber: Int = 0
+    private var pageSize: Int = 10
+    private let pageLimit: Int
+    private var tasks = Set<TaskCancellable>()
     
     
     private let nasaDataService: NasaDataService
     
-    init(nasaDataService: NasaDataService = NasaDataService(), limit: Int = 1) {
+    init(nasaDataService: NasaDataService = NasaDataService()) {
+        
         self.nasaDataService = nasaDataService
-        self.limit = limit
+        self.pageLimit = 10000/self.pageSize
+        
+        Task {
+            for await _ in $searchText.values.debounce(for: .seconds(0.2)) {
+                await fetch()
+            }
+        }.store(in: &tasks)
     }
     
-    
+    /// Initial fetch for the search text
     func fetch() async {
+        pageNumber = 1
+        if searchText.isEmpty {
+            self.data = []
+            return
+        }
+        let url = "https://images-api.nasa.gov/search?q=\(searchText)&media_type=image&page=\(pageNumber)&page_size=\(pageSize)"
         
-        let url = "https://images-api.nasa.gov/search?q=mars&media_type=image&page=1&page_size=2"
-        
+        do {
+            let newData = try await nasaDataService.fetch(url: url)
+            self.data = newData
+        } catch (let err) {
+            print(err)
+        }
+    }
+    
+    /// To take advantage of the pagination
+    func loadMoreData() async {
+        pageNumber += 1
+        let url = "https://images-api.nasa.gov/search?q=\(searchText)&media_type=image&page=\(pageNumber)&page_size=\(pageSize)"
         
         do {
             let newData = try await nasaDataService.fetch(url: url)
@@ -35,6 +64,4 @@ class HomeViewModel: ObservableObject {
             print(err)
         }
     }
-    
-    
 }
