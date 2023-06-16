@@ -37,7 +37,7 @@ Some features implemented:
 ## 🏁 Structure <a name = "structure"></a>
 
 The Application is built using MVVM architectecture. Several data services, and utilities are defined to have loose coupling between the components, also it make sures that any component can be modified without modifying othercomponents of the application. File structure is shown below, viewModels are grouped with views inside the core folder, and other components such as data services, utilities, and extensions are grouped together in their respictive folders.
-
+```
 ─ WorkdayProject
    │  ├─ Assets.xcassets                                                     
    │  │  ├─ AppIcon.appiconset
@@ -83,7 +83,7 @@ The Application is built using MVVM architectecture. Several data services, and 
    │  │  ├─ NetworkManager.swift
    │  │  └─ UtilityFunctions.swift
    │  └─ WorkdayProjectApp.swift
- 
+ ```
 
 ### Third Party Libraries
 
