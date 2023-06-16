@@ -21,9 +21,9 @@ class HomeViewModel: ObservableObject {
     private var tasks = Set<TaskCancellable>()
     
     
-    private let nasaDataService: NasaDataService
+    private let nasaDataService: NasaDataLayer
     
-    init(nasaDataService: NasaDataService = NasaDataService()) {
+    init(nasaDataService: NasaDataLayer = NasaDataService()) {
         
         self.nasaDataService = nasaDataService
         self.pageLimit = 10000/self.pageSize

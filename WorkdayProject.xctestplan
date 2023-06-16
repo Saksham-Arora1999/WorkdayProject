@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "8372045E-C5EF-422F-AEF4-211D5EC3B3DF",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:WorkdayProject.xcodeproj",
+      "identifier" : "AB8ABD092A3988E80063FCD1",
+      "name" : "WorkdayProject"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WorkdayProject.xcodeproj",
+        "identifier" : "AB8ABD192A3988EA0063FCD1",
+        "name" : "WorkdayProjectTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WorkdayProject.xcodeproj",
+        "identifier" : "AB8ABD232A3988EA0063FCD1",
+        "name" : "WorkdayProjectUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

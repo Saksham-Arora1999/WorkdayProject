@@ -8,9 +8,14 @@
 import Foundation
 import SwiftUI
 
+protocol LocalFM {
+    func saveImage(image: UIImage, imageName: String, directoryName: String)
+    func getImage(imageName: String, directoryName: String) -> UIImage?
+    
+}
 
 /// Singleton class to enable caching for images in the filemanager
-class LocalFileManager {
+class LocalFileManager: LocalFM{
     
     static let instance = LocalFileManager()
     

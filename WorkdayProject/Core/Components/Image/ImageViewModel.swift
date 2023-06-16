@@ -15,13 +15,13 @@ class ImageViewModel: ObservableObject {
     @Published var image: UIImage? = nil
     @Published var isLoading: Bool = true
     
-    private var imageDataService: ImageDataService
+    private var imageDataService: ImageDataLayer
     
     private let data: NasaData
     
-    init(data: NasaData) {
+    init(data: NasaData, imageDataService: ImageDataLayer) {
         self.data = data
-        self.imageDataService = ImageDataService(data: data)
+        self.imageDataService = imageDataService
     }
     
     /// Function which fetches image form ImageDataService
@@ -39,8 +39,5 @@ class ImageViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
-    
-    
-    
     
 }

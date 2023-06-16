@@ -14,7 +14,7 @@ struct ImageView: View {
     @StateObject var vm: ImageViewModel
     
     init(_ data: NasaData) {
-        _vm = StateObject(wrappedValue: ImageViewModel(data: data))
+        _vm = StateObject(wrappedValue: ImageViewModel(data: data, imageDataService: ImageDataService(data: data)))
     }
     
     var body: some View {

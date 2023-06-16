@@ -93,7 +93,11 @@ protocol NasaDataLayer {
 // MARK: NasaDataService
 class NasaDataService: NasaDataLayer {
     
-    let networkManager: NetworkLayer = NetworkManager.instance
+    let networkManager: NetworkLayer
+    
+    init(networkManager: NetworkLayer = NetworkManager.instance) {
+        self.networkManager = networkManager
+    }
     
     /// Responsible for decoding data into NasaData format
     ///
@@ -103,11 +107,15 @@ class NasaDataService: NasaDataLayer {
     /// - Returns: An array of NasaData or throws an error
     func fetch(url: String) async throws -> [NasaData] {
         
-        let data = try await networkManager.fetch(url: url)
-        
-        let returnedData =  try JSONDecoder().decode(APIResponse.self, from: data)
-        
-        return returnedData.collection.items.map {  NasaData(detail: $0.data[0], itemLink: $0.links[0]) }
+        do {
+            let data = try await networkManager.fetch(url: url)
+            
+            let returnedData =  try JSONDecoder().decode(APIResponse.self, from: data)
+            
+            return returnedData.collection.items.map {  NasaData(detail: $0.data[0], itemLink: $0.links[0]) }
+        } catch {
+            throw error
+        }
         
         
     }

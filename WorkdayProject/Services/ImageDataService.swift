@@ -17,8 +17,8 @@ protocol ImageDataLayer {
 /// ImageDataService is used to fetch images
 class ImageDataService: ImageDataLayer {
     
-    let fileManager = LocalFileManager.instance
-    let networkManager = NetworkManager.instance
+    let fileManager: LocalFM = LocalFileManager.instance
+    let networkManager: NetworkLayer = NetworkManager.instance
     let data: NasaData
     let dirName = "Nasa_Images"
     
