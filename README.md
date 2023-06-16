@@ -23,7 +23,7 @@
 ## 📝 Table of Contents
 
 - [About](#about)
-- [Getting Started](#getting_started)
+- [Structure](#structure)
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
@@ -35,40 +35,32 @@
 ## 🧐 About <a name = "about"></a>
 
 It is a basic search application where users can search over the nasa images API.
+Some features implemented:
+1) Image caching
+2) Lazy Navigation Links
+3) Debouncing
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## 🏁 Structure <a name = "structure"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+The Application is built using MVVM architectecture. Several data services, and utilities are defined to have loose coupling between the components, also it make sures that any component can be modified without modifying othercomponents of the application.
 
-### Prerequisites
+### Third Party Libraries
 
-What things you need to install the software and how to install them.
+Third party libraries used are:
 
 ```
-Give examples
+1) Swift-async-algorithms: https://github.com/apple/swift-async-algorithms
 ```
+
+This library gives us valuable functions such as debouncing, throttling and many others while working with swift-concurrency.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+To add the third-part library into your project, you can use lightweight SPM to add it as a dependency. 
 
-Say what the step will be
+## 🔧 Test Coverage <a name = "tests"></a>
 
-```
-Give the example
-```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
 
 ### Break down into end to end tests
 
